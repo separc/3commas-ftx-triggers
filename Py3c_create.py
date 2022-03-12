@@ -12,8 +12,8 @@ p3cw = Py3CW(
     secret=config.TC_API_SECRET,
     request_options={
         'request_timeout': 20,
-        'nr_of_retries': 1,
-        'retry_status_codes': [502]
+        'nr_of_retries': 10,
+        'retry_status_codes': [500, 502, 503, 504]
     }
 )
 
@@ -80,7 +80,7 @@ def generate_long_bots(pairs, minprice):
             print(f'Error: {error}')
             bot_list[key] = data["id"]
             print(f'{key}  > {bot_list[key]}')
-            time.sleep(0.5)
+            time.sleep(0.3)
             f = open("lbotid_list.txt", "a")
             f.write(f'{key}:{bot_list[key]}\n')
             f.close()
@@ -128,7 +128,7 @@ def generate_short_bots(pairs, minprice):
             print(f'Error: {error}')
             bot_list[key] = data["id"]
             print(f'{key}  > {bot_list[key]}')
-            time.sleep(0.5)
+            time.sleep(0.3)
             f = open("sbotid_list.txt", "a")
             f.write(f'{key}:{bot_list[key]}\n')
             f.close()
