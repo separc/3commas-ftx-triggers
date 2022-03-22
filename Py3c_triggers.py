@@ -24,9 +24,9 @@ p3cw = Py3CW(
     key=config.TC_API_KEY,
     secret=config.TC_API_SECRET,
     request_options={
-        'request_timeout': 30,
-        'nr_of_retries': 1,
-        'retry_status_codes': [502]
+        'request_timeout': 20,
+        'nr_of_retries': 5,
+        'retry_status_codes': [500, 502, 503, 504]
     }
 )
 
