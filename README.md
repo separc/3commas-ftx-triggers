@@ -13,3 +13,5 @@ To use:
 5. Run the `Py3c_triggers.py` script to let the fun begin.  
 
 More details on all the config settings, how the script works, and how to run continuously without leaving your computer on 24/7, will follow soon. 
+
+Note: It happens that the trigger script crashes sometime (due to bad network, connetion errors, etc). In order, to run continuously the script and restart it automatically when it crashes, it is possible to run it as a service on a linux machine (or other OS as desired). See Py3c_triggers.service for an exemple of a service file to be used on a RaspberryPi.
