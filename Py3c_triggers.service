@@ -1,0 +1,13 @@
+[Unit]
+Description=Py3c FTX Triggers
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/Documents/3commas-ftx-triggers-SP
+ExecStart=/home/pi/Documents/3commas-ftx-triggers-SP/venv/bin/python3 /home/pi/Documents/3commas-ftx-triggers-SP/Py3c_triggers.py 
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
